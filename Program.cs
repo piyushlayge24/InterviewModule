@@ -4,14 +4,14 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
-builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
+//var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+//builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
 
 // Add services to the container.
 
 builder.Services.AddControllers();
 
-builder.Services.AddHealthChecks();
+//builder.Services.AddHealthChecks();
 
 builder.Services.AddCors(options =>
 {
@@ -39,7 +39,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHealthChecks("/health");
+//app.UseHealthChecks("/health");
 
 app.UseCors("AllowReactApp");
 
